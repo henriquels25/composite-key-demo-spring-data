@@ -38,7 +38,6 @@ public class ProductRatingRepositoryTest {
         customer = customerRepository.save(customer);
 
         // Create a ProductRating
-//        ProductRatingId productRatingId = new ProductRatingId(customer.getId(), product.getId());
         ProductRating productRating = ProductRating.builder()
                 .id(new ProductRatingId())
                 .customer(customer)
@@ -47,9 +46,6 @@ public class ProductRatingRepositoryTest {
                 .build();
 
         productRatingRepository.save(productRating);
-
-        // Fetch the saved rating
-        // ProductRating foundRating = productRatingRepository.findById(new ProductRatingId(customer.getId(), product.getId())).orElse(null);
 
         // Assert that the rating is saved correctly
         assertThat(productRating).isNotNull();
